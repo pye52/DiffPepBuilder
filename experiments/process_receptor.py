@@ -4,6 +4,10 @@ NOTE: If more than one of the following is provided, the order of priority is: l
     Please remove the native peptide ligand chain if hotspots or motif is specified. 
 """
 import pyrootutils
+import torch
+from torch.serialization import add_safe_globals
+
+add_safe_globals([argparse.Namespace])
 
 # See: https://github.com/ashleve/pyrootutils
 root = pyrootutils.setup_root(
