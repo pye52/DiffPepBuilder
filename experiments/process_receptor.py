@@ -7,8 +7,6 @@ import pyrootutils
 import torch
 from torch.serialization import add_safe_globals
 
-add_safe_globals([argparse.Namespace])
-
 # See: https://github.com/ashleve/pyrootutils
 root = pyrootutils.setup_root(
     search_from=__file__,
@@ -36,6 +34,7 @@ from data import parsers
 from data import residue_constants
 from experiments.process_dataset import PretrainedSequenceEmbedder
 
+add_safe_globals([argparse.Namespace])
 
 def create_parser():
     parser = argparse.ArgumentParser(
